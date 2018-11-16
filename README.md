@@ -1,0 +1,2 @@
+# StuAuth
+A Hackathon Project
