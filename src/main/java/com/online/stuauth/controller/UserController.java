@@ -21,8 +21,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/register")
-    public Msg register(@RequestParam("data")String data,@RequestParam("file") MultipartFile[] files){
-        return userService.register(data,files);
+    public Msg register(@RequestParam("data")String data){
+        return userService.register(data);
     }
 
     @PostMapping("/signIn")
