@@ -32,9 +32,7 @@ public class UserController {
 
     @PostMapping()
     public JSONObject Reg(@RequestParam Map<String,String> map){
-  return null;
+        return null;
     }
-
-
 
 }
