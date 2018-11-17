@@ -1,0 +1,14 @@
+server:
+  port: 8387
+
+spring:
+  datasource:
+    username: lovewall
+    password: ilovewall
+    url: jdbc:mysql://202.194.15.146:3306/sduAuth?zeroDateTimeBehavior=convertToNull
+    driver-class-name: com.mysql.jdbc.Driver
+
+#  redis:
+#    host: 202.194.15.146
+#    port: 6379
+#    password: michaelod
