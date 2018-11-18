@@ -21,17 +21,24 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/register")
-    public Msg register(@RequestParam("data")String data,@RequestParam("file") MultipartFile[] files){
-        return userService.register(data,files);
+    public Msg register(@RequestParam("phone")String phone,@RequestParam("idcode") String idcode,
+                        @RequestParam("name") String name,@RequestParam("pwd")String pwd){
+        System.out.println(name);
+        return userService.register(phone,idcode,name,pwd);
     }
 
-    @PostMapping("/signIn")
-    public Msg signIn(@RequestParam("phone")String phone, @RequestParam("password") String password){
+    @RequestMapping("/signIn")
+    public Msg signIn(@RequestParam("phone")String phone, @RequestParam("pwd") String password){
 
         return userService.signIn(phone,password);
     }
 
+    @RequestMapping("/update")
+    public Msg userupdate(@RequestParam("diploma")String diploma,@RequestParam("attendTime")String attendTime,
+                          @RequestParam("leaveTime")String leaveTime,@RequestParam("school")String school,
+                          @RequestParam("id")String id){
 
-
+        return userService.userupdate(diploma,attendTime,leaveTime,school,Integer.parseInt(id));
+    }
 
 }
