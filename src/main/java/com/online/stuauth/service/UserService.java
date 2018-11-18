@@ -15,15 +15,15 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
-    public Msg register(String data){
-        JSONObject obj = JSONObject.parseObject(data);
-        if (userMapper.regQueryPhone(obj.getString("phone")) != null) {
+    public Msg register(String phone,String idcode,String name,String pwd){
+
+        if (userMapper.regQueryPhone(phone) != null) {
             return Msg.err("手机号已存在");
-        } else if (userMapper.regQueryName(obj.getString("idcode")) != null) {
+        } else if (userMapper.regQueryName(idcode) != null) {
             return Msg.err("身份证号已注册");
         } else {
-            userMapper.register(obj.getString("phone"), obj.getString("pwd"),
-                    obj.getString("name"), obj.getString("idcode"));
+            userMapper.register(phone, pwd,
+                    name, idcode);
             return Msg.ok("success");
         }
 
@@ -34,5 +34,10 @@ public class UserService {
         if (user == null) {
             return Msg.err("Login error");
         } else return Msg.ok("success", user);
+    }
+
+    public Msg userupdate(String diploma,String attendTime,String leaveTime,String school,int id){
+        userMapper.update(diploma,attendTime,leaveTime,school,id);
+        return Msg.ok("success");
     }
 }

@@ -5,7 +5,7 @@ spring:
   datasource:
     username: lovewall
     password: ilovewall
-    url: jdbc:mysql://202.194.15.146:3306/sduAuth?zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://202.194.15.146:3306/sduauth?zeroDateTimeBehavior=convertToNull
     driver-class-name: com.mysql.jdbc.Driver
 
 #  redis:

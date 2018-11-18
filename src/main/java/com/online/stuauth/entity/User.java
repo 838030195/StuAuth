@@ -1,6 +1,7 @@
 package com.online.stuauth.entity;
 
 public class User {
+    private int id;
     private String name;
     private String password;
     private String jdId;
@@ -15,6 +16,14 @@ public class User {
     private String phone;
     private String welfared;
     private String other;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPassword() {
         return password;
